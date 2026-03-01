@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="main-page">
+    <div class="main-container">
+        <!-- navbar section start -->
+        <div class="navbar">
+            <div class="left-bar">
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <h1>ToList</h1>
+            </div>
+            <div class="right-bar">
+                <a href="#">
+                    <i data-feather="user"></i>
+                </a>
+            </div>
+        </div>
+        <!-- navbar section end -->
+
+        <!-- menu -->
+        <ul class="nav-links" id="nav-links">
+            <div class="menu">
+                <li><a href="#">menu 1</a></li>
+                <li><a href="#">menu 2</a></li>
+                <li><a href="#">menu 3</a></li>
+            </div>
+            <li class="logout-btn"><a href="#">logout</a></li>
+            
+        </ul>
+
+
+        <!-- content section start -->
+        <div class="content">
+            <div class="content-card"></div>
+            <div class="content-card"></div>
+            <div class="content-card"></div>
+
+        </div>
+        <!-- content section end -->
+
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+      feather.replace();
+</script>
+</html>
