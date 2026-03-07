@@ -3,90 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ToList - Main Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="main-page">
-    <div class="main-container">
-        <!-- navbar section start -->
-        <div class="navbar">
-            <div class="left-bar">
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <h1>ToList</h1>
-                <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="cari catatan">
-                </div>
+<body class="bg-[#fdf4ff] min-h-screen font-sans">
+
+    <nav class="fixed top-0 z-[999] w-full h-[70px] bg-[#ddaffc] px-6 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-4">
+            <div id="hamburger" class="cursor-pointer md:hidden group">
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5 transition-all"></div>
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5 transition-all"></div>
+                <div class="w-6 h-0.5 bg-gray-600 transition-all"></div>
             </div>
-            <div class="right-bar">
-                <a href="#">
-                    <i data-feather="user"></i>
+            
+            <h1 class="text-2xl font-bold text-gray-800">ToList</h1>
+            
+            <div class="hidden md:block ml-25 relative w-64">
+                <input type="text" 
+                       class="w-full py-2 px-5 bg-[#fff6eb] border-2 border-gray-300 rounded-full text-sm outline-none focus:border-purple-500 transition-all" 
+                       placeholder="cari catatan">
+
+                <button class="absolute right-1 top-1 bottom-1 px-4 text-purple-900 text-xs rounded-full hover:bg-purple-300 transition-colors">
+                    <i data-feather="search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <a href="#" class="p-2 hover:bg-white/20 rounded-full transition-all">
+                <i data-feather="user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside id="nav-links" 
+               class="fixed top-[70px] left-0 z-[888] w-[200px] h-[calc(100vh-70px)] bg-[#191944] p-4 flex flex-col justify-between transition-transform duration-300 transform md:translate-x-0 -translate-x-full">
+            
+            <ul class="space-y-4">
+                <li>
+                    <a href="main-page.html" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-purple-900 bg-[#ddaffc]">
+                        <i data-feather="home" class="mr-2"></i>home
+                    </a>
+                </li>
+                <li>
+                    <a href="upload.html" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-orange-100 ">
+                        <i data-feather="edit" class="mr-2"></i>upload
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-orange-100 ">
+                        <i data-feather="list" class="mr-2"></i>todo list
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-orange-100 ">
+                        <i data-feather="book" class="mr-2"></i> saved
+                    </a>    
+                </li>
+            </ul>
+
+            <div class="mb-4">
+                <a href="#" class="flex w-full py-2 px-4 bg-[#ddaffc] text-center font-bold rounded-lg text-gray-800 hover:opacity-90 transition-opacity">
+                    <i data-feather="log-out" class="mr-2"></i> logout
                 </a>
             </div>
-        </div>
-        <!-- navbar section end -->
+        </aside>
 
-        <!-- menu -->
-        <ul class="nav-links" id="nav-links">
-            <div class="menu">
-                <li><a href="#">upload catatan</a></li>
-                <li><a href="#">todo list</a></li>
-                <li><a href="#">Tersimpan</a></li>
-            </div>
-            <li class="logout-btn"><a href="#">logout</a></li>
-            
-        </ul>
+        <!-- konten -->
+        <main class="flex-1 mt-[70px] md:ml-[200px] p-6 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                
+                <div class="bg-white w-full max-w-[350px] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-[150px] rounded-lg overflow-hidden mb-4">
+                        <img src="images/buku.jpg" alt="catatan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight mb-2">Catatan matkul algoritma pemrograman minggu-1</h3>
+                    <span class="text-xs font-medium px-2 py-1 bg-gray-100 rounded text-gray-600 uppercase tracking-wider">algoritma</span>
+                </div>
 
+                <div class="bg-white w-full max-w-[350px] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-[150px] rounded-lg overflow-hidden mb-4">
+                        <img src="images/buku.jpg" alt="catatan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight mb-2">Catatan matkul kalkulus</h3>
+                    <span class="text-xs font-medium px-2 py-1 bg-gray-100 rounded text-gray-600 uppercase tracking-wider">matematika</span>
+                </div>
 
-        <!-- content section start -->
-        <div class="content">
-            <div class="content-card">
-                <div class="thumbnail">
-                    <img src="images/buku.jpg" alt="">
+                <div class="bg-white w-full max-w-[350px] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-[150px] rounded-lg overflow-hidden mb-4">
+                        <img src="images/buku.jpg" alt="catatan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight mb-2">Catatan matkul big data</h3>
+                    <span class="text-xs font-medium px-2 py-1 bg-gray-100 rounded text-gray-600 uppercase tracking-wider">data</span>
                 </div>
-                <div class="title">
-                    <h3>Catatan matkul algoritma pemrograman minggu-1</h3>
-                </div>
-                <div class="metadata">algoritma</div>
-            </div>
-            <div class="content-card">
-                <div class="thumbnail">
-                    <img src="images/buku.jpg" alt="">
-                </div>
-                <div class="title">
-                    <h3>Catatan matkul kalkulus</h3>
-                </div>
-                <div class="metadata">matematika</div>
-            </div>
-            <div class="content-card">
-                <div class="thumbnail">
-                    <img src="images/buku.jpg" alt="">
-                </div>
-                <div class="title">
-                    <h3>Catatan matkul big data</h3>
-                </div>
-                <div class="metadata">data</div>
-            </div>
-            <div class="content-card">
-                <div class="thumbnail">
-                    <img src="images/buku.jpg" alt="">
-                </div>
-                <div class="title">
-                    <h3>Catatan matkul Kimia</h3>
-                </div>
-                <div class="metadata">kimia</div>
-            </div>
-        </div>
-        <!-- content section end -->
 
+                <div class="bg-white w-full max-w-[350px] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-full h-[150px] rounded-lg overflow-hidden mb-4">
+                        <img src="images/buku.jpg" alt="catatan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 leading-tight mb-2">Catatan matkul Kimia</h3>
+                    <span class="text-xs font-medium px-2 py-1 bg-gray-100 rounded text-gray-600 uppercase tracking-wider">kimia</span>
+                </div>
+
+            </div>
+        </main>
     </div>
+
+    <script>
+        feather.replace();   
+    </script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-<script>
-      feather.replace();
-</script>
 </html>
