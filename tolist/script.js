@@ -5,7 +5,7 @@ hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('-translate-x-full');
 });
 
-// Memanggil input file saat area drop diklik
+// upload file
 const dropArea = document.getElementById('drop-area');
 const fileInput = document.getElementById('file-input');
 
@@ -17,4 +17,13 @@ fileInput.addEventListener('change', function() {
         dropArea.querySelector('p').innerHTML = `File terpilih: <span class="font-bold text-green-600">${fileName}</span>`;
         dropArea.classList.add('border-green-300', 'bg-green-50/30');
     }
+});
+
+// bookmark
+const bookmarks = document.querySelectorAll('.bookmark-btn');
+
+bookmarks.forEach(btn => {
+    btn.addEventListener('click', function () {
+        this.classList.toggle('text-purple-600');
+    });
 });
