@@ -41,7 +41,9 @@ body{
     border-radius: 20px;
     box-shadow: 0 20px 20px rgba(0,0,0,0.1);
     width: 315px;
-    height: 387px;
+    height: auto; 
+    min-height: 387px;
+    transition: all 0.3s ease;
 }
 
 .login-header{
@@ -92,8 +94,14 @@ body{
     border-radius: 20px;
     font-size: 14px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 .forget{
     text-align: center;
@@ -118,9 +126,28 @@ body{
     font-weight: 600;
     cursor: pointer;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .login-button:hover {
     transform: translateY(-2px);
+    background-color: var(--primary-dark);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #7677b870;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    color: #000000;
+    font-size: 14px;
+    display: none; 
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.4s ease-out;
 }
