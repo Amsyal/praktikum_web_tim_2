@@ -19,11 +19,5 @@ fileInput.addEventListener('change', function() {
     }
 });
 
-// bookmark
-const bookmarks = document.querySelectorAll('.bookmark-btn');
 
-bookmarks.forEach(btn => {
-    btn.addEventListener('click', function () {
-        this.classList.toggle('text-purple-600');
-    });
-});
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToList - Main Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-[#F8FAFC] min-h-screen font-sans">
+
+    <nav class="fixed top-0 z-[999] w-full h-[70px] bg-[#ddaffc] px-6 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-4">
+            <div id="hamburger" class="cursor-pointer md:hidden group">
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5 transition-all"></div>
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5 transition-all"></div>
+                <div class="w-6 h-0.5 bg-gray-600 transition-all"></div>
+            </div>
+            
+            <h1 class="text-2xl font-bold text-gray-800">ToList</h1>
+            
+            <div class="hidden md:block ml-25 relative w-64">
+                <input type="text" 
+                       class="w-full py-2 px-5 bg-[#fff6eb] border-2 border-gray-300 rounded-full text-sm outline-none focus:border-purple-500 transition-all" 
+                       placeholder="cari catatan">
+
+                <button class="absolute right-1 top-1 bottom-1 px-4 text-purple-900 text-xs rounded-full hover:bg-purple-300 transition-colors">
+                    <i data-feather="search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <a href="#" class="p-2 hover:bg-white/20 rounded-full transition-all">
+                <i data-feather="user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside id="nav-links" 
+               class="fixed top-[70px] left-0 z-[888] w-[200px] h-[calc(100vh-70px)] bg-[#191944] p-4 flex flex-col justify-between transition-transform duration-300 transform md:translate-x-0 -translate-x-full">
+            
+            <ul class="space-y-4">
+                <li>
+                    <a href="main-page.html" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-purple-900 bg-[#ddaffc]">
+                        <i data-feather="home" class="mr-2"></i>home
+                    </a>
+                </li>
+                <li>
+                    <a href="upload.html" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-white">
+                        <i data-feather="edit" class="mr-2"></i>upload
+                    </a>
+                </li>
+                <li>
+                    <a href="todo-list.html" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-white">
+                        <i data-feather="list" class="mr-2"></i>todo list
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex w-full py-2 px-4 bg-antiquewhite text-center font-bold rounded-lg text-gray-800 bg-white">
+                        <i data-feather="book" class="mr-2"></i> saved
+                    </a>    
+                </li>
+            </ul>
+
+            <div class="mb-4">
+                <a href="#" class="flex w-full py-2 px-4 bg-[#ddaffc] text-center font-bold rounded-lg text-gray-800 hover:opacity-90 transition-opacity">
+                    <i data-feather="log-out" class="mr-2"></i> logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- konten -->
+         <main class="flex-1 mt-[70px] md:ml-[200px] p-6 md:p-12">
+             <div class="todo-list-container grid grid-cols-1 lg:grid-cols-3 gap-4">
+                 <div id="todo" class="lg:border-r border-grey-200 h-screen">
+                     <h3 class="font-bold">Todo</h3>
+                     <div class="m-4">
+                         <ul>
+                            <div class="flex justify-between justify-items-center pb-2 border-b border-gray-400">
+                                <li >Tugas 1</li>
+                                <input type="checkbox" name="" id="" class="mr-2">
+                            </div>
+                         </ul>
+                     </div>
+                 </div>
+                 <div id="doing" class="lg:border-r border-grey-200 ">
+                    <h3 class="font-bold">Doing</h3>
+                     <div class="m-4">
+                         <ul>
+                            <div class="flex justify-between justify-items-center pb-2 border-b border-gray-400">
+                                <li >Tugas 2</li>
+                                <input type="checkbox" name="" id="" class="mr-2">
+                            </div>
+                         </ul>
+                     </div>
+                 </div>
+                 <div id="done">
+                    <h3 class="font-bold">Done</h3>
+                 </div>
+             </div>
+         </main>
+
+    <script>
+        feather.replace();   
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
