@@ -8,3 +8,12 @@
     --primary: #eee;
 }
 
+.is-bookmarked {
+    fill: black !important;
+    stroke: black !important;
+}
+
+/* Opsional: Efek transisi halus */
+#bookmark-icon {
+    transition: all 0.2s ease;
+}
