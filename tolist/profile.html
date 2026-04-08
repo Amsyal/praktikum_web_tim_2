@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToList - Profile</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="bg-[#fff] min-h-screen font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 z-[999] w-full h-[70px] bg-[#ddaffc] px-6 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-4">
+            <div id="hamburger" class="cursor-pointer md:hidden group">
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5"></div>
+                <div class="w-6 h-0.5 bg-gray-600 mb-1.5"></div>
+                <div class="w-6 h-0.5 bg-gray-600"></div>
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-800">ToList</h1>
+
+            <div class="hidden md:block ml-25 relative w-64">
+                <input type="text"
+                    class="w-full py-2 px-5 bg-[#fff] border-2 border-gray-300 rounded-full text-sm outline-none focus:border-purple-500"
+                    placeholder="cari catatan">
+
+                <button class="absolute right-1 top-1 bottom-1 px-4 text-purple-900 text-xs rounded-full hover:bg-purple-300">
+                    <i data-feather="search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <a href="#" class="p-2 hover:bg-white/20 rounded-full">
+                <i data-feather="user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex">
+
+        <!-- SIDEBAR -->
+        <aside id="nav-links"
+            class="fixed top-[70px] left-0 z-[888] w-[200px] h-[calc(100vh-70px)] bg-[#191944] p-4 flex flex-col justify-between transition-transform duration-300 transform md:translate-x-0 -translate-x-full">
+
+            <ul class="space-y-4">
+                <li>
+                    <a href="main-page.html" class="flex w-full py-2 px-4 font-bold rounded-lg text-gray-800 bg-[#fff]">
+                        <i data-feather="home" class="mr-2"></i>home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="upload.html" class="flex w-full py-2 px-4 font-bold rounded-lg text-gray-800 bg-[#fff]">
+                        <i data-feather="edit" class="mr-2"></i>upload
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex w-full py-2 px-4 font-bold rounded-lg text-gray-800 bg-[#fff]">
+                        <i data-feather="list" class="mr-2"></i>to-do list
+                    </a>
+                </li>
+
+                <li>
+                    <a href="saved.html" class="flex w-full py-2 px-4 font-bold rounded-lg text-gray-800 bg-[#fff]">
+                        <i data-feather="book" class="mr-2"></i>saved
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mb-4">
+                <a href="#" class="flex w-full py-2 px-4 bg-[#ddaffc] font-bold rounded-lg text-gray-800 hover:opacity-90">
+                    <i data-feather="log-out" class="mr-2"></i>logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- KONTEN PROFILE -->
+<main class="flex-1 mt-[95px] md:ml-[200px] bg-gray-50 min-h-screen">
+
+    <!-- HEADER / COVER -->
+    <div class="max-w-7xl mx-auto h-48 bg-gradient-to-r from-purple-500 to-purple-300 rounded-b-3xl relative shadow-md">
+
+        <!-- FOTO PROFILE -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-[110px]">
+            <div class="w-32 h-32 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                <img id="profile-img" src="images/profile.jpg" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+
+    <!-- KONTEN -->
+    <div class="mt-20 px-6 md:px-12">
+
+        <!-- VIEW MODE -->
+        <div id="profile-view" class="max-w-3xl mx-auto text-center">
+
+            <h2 id="name" class="text-2xl font-bold text-gray-800">naufal miftakhul</h2>
+            <p id="email" class="text-gray-500 text-sm mb-4">miftakhul@email.com</p>
+
+            <button onclick="editProfile()" 
+                class="px-6 py-2 bg-[#ddaffc] text-gray-800 font-semibold rounded-lg mb-6 hover:opacity-90 transition">
+                Edit Profile
+            </button>
+
+            <!-- INFO CARD -->
+            <div class="bg-white shadow-md rounded-xl p-6 text-left border border-gray-100">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div>
+                        <p class="text-sm text-gray-400">Username</p>
+                        <p id="username" class="font-semibold text-gray-800">miftakhulnaufal</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-400">Status</p>
+                        <p id="status" class="font-semibold ">Mahasiswa</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-400">Media sosial</p>
+                        <p id="join" class="font-semibold text-gray-800">ig @nfl.mftkhl</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-400">Jumlah Catatan</p>
+                        <p id="notes" class="font-semibold text-gray-800">24 Catatan</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EDIT MODE -->
+        <div id="profile-edit" class="hidden max-w-3xl mx-auto">
+
+            <div class="bg-white shadow-md rounded-xl p-6 border border-gray-100">
+
+                <div class="flex flex-col gap-4">
+
+                    <input id="input-name" type="text" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <input id="input-email" type="email" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <input id="input-username" type="text" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <input id="input-status" type="text" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <input id="input-join" type="text" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+                    <input id="input-notes" type="text" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-300">
+
+                    <div class="flex gap-4 justify-center mt-4">
+                        <button onclick="saveProfile()" class="px-4 py-2 bg-green-400 text-white rounded hover:bg-green-500 transition">
+                            Save
+                        </button>
+                        <button onclick="cancelEdit()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition">
+                            Cancel
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
